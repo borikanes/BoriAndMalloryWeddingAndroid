@@ -6,12 +6,17 @@ import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
 
+/**
+ * The first activity the user will see in the app.  This houses the bottom navigation bar along
+ * with a fragment view pager for switching between screens when the bottom bar items are tapped.
+ */
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // listen for clicks on the bottom bar
         bottom_nav_bar.setOnNavigationItemSelectedListener(this)
 
         // set up view pager
