@@ -14,16 +14,16 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
         bottom_nav_bar.setOnNavigationItemSelectedListener(this)
 
-        // TODO: set up ViewPager
+        // set up view pager
+        main_pager.adapter = MainPagerAdapter(supportFragmentManager)
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        // TODO: switch fragments when selected
         when (item.itemId) {
-            R.id.home -> {}
-            R.id.schedule -> {}
-            R.id.seating -> {}
-            R.id.food -> {}
+            R.id.home -> main_pager.setCurrentItem(MainPagerAdapter.MainPagerPosition.HOME.ordinal, true)
+            R.id.schedule -> main_pager.setCurrentItem(MainPagerAdapter.MainPagerPosition.SCHEDULE.ordinal, true)
+            R.id.seating -> main_pager.setCurrentItem(MainPagerAdapter.MainPagerPosition.SEATING.ordinal, true)
+            R.id.food -> main_pager.setCurrentItem(MainPagerAdapter.MainPagerPosition.FOOD.ordinal, true)
         }
         return true
     }
