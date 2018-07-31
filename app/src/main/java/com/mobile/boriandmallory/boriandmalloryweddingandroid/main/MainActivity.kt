@@ -1,9 +1,10 @@
-package com.mobile.boriandmallory.boriandmalloryweddingandroid
+package com.mobile.boriandmallory.boriandmalloryweddingandroid.main
 
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
+import com.mobile.boriandmallory.boriandmalloryweddingandroid.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**

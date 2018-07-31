@@ -1,7 +1,11 @@
-package com.mobile.boriandmallory.boriandmalloryweddingandroid
+package com.mobile.boriandmallory.boriandmalloryweddingandroid.main
 
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
+import com.mobile.boriandmallory.boriandmalloryweddingandroid.tabfragments.FoodFragment
+import com.mobile.boriandmallory.boriandmalloryweddingandroid.tabfragments.HomeFragment
+import com.mobile.boriandmallory.boriandmalloryweddingandroid.tabfragments.ScheduleFragment
+import com.mobile.boriandmallory.boriandmalloryweddingandroid.tabfragments.SeatingFragment
 
 class MainPagerAdapter(fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager) {
 
