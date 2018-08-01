@@ -33,7 +33,7 @@
         app:layout_constraintWidth_default="percent"
         app:layout_constraintWidth_percent="1.0" />
 
-    <View
+    <TextView
         android:id="@+id/countdown"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -42,6 +42,8 @@
         android:layout_marginStart="9dp"
         android:background="@color/whiteSmoke"
         android:elevation="4dp"
+        android:text="Time to wedding day"
+        android:textAlignment="center"
         app:layout_constraintHeight_default="percent"
         app:layout_constraintHeight_percent=".15"
         app:layout_constraintBottom_toTopOf="@+id/location-view"
@@ -49,7 +51,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-    <View
+    <TextView
         android:id="@+id/date-view"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -58,12 +60,16 @@
         android:layout_marginTop="20dp"
         android:background="@color/burgundy"
         android:elevation="4dp"
+        android:text="September 22 #maluwabori"
+        android:textAlignment="center"
+        android:textColor="@color/whiteSmoke"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/location-view"
         app:layout_constraintTop_toBottomOf="@+id/countdown" />
 
-    <View
+    <TextView
         android:id="@+id/location-view"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -72,6 +78,10 @@
         android:layout_marginStart="9dp"
         android:background="@color/teal"
         android:elevation="4dp"
+        android:text="College Park & Laurel MD"
+        android:textAlignment="center"
+        android:textColor="@color/whiteSmoke"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/date-view"
         app:layout_constraintStart_toStartOf="parent"
