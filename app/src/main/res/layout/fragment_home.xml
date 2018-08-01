@@ -42,6 +42,8 @@
         android:layout_marginStart="9dp"
         android:background="@color/whiteSmoke"
         android:elevation="4dp"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent=".15"
         app:layout_constraintBottom_toTopOf="@+id/location-view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
