@@ -7,4 +7,9 @@
     <string name="bottom_bar_seating">Seating</string>
     <string name="bottom_bar_food">Food</string>
 
+    <!-- Home Fragment -->
+    <string name="home_countdown">Time to wedding day\n%1$d days</string>
+    <string name="home_wedding_date">September\n22\n#maluwabori</string>
+    <string name="home_location">College Park\n&amp;\nLaurel MD</string>
+
 </resources>
