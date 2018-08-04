@@ -1,11 +1,19 @@
 package com.mobile.boriandmallory.boriandmalloryweddingandroid.tabfragments
 
+import android.os.Build
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.mobile.boriandmallory.boriandmalloryweddingandroid.R
+import kotlinx.android.synthetic.main.fragment_home.*
+import java.text.SimpleDateFormat
+import java.time.Month
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.util.*
+import java.util.concurrent.TimeUnit
 
 /**
  * The fragment for displaying the first tab of information.  Contains information
@@ -30,5 +38,35 @@ class HomeFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_home, container, false)
+    }
+
+    fun setupView() {
+        println(message = "SHOULD PRINT")
+        countdown.text = "Time to wedding day\n" + getTimeLeftToWedding()
+    }
+
+    private fun getTimeLeftToWedding(): String {
+        val currentDate = Date()
+        val weddingDateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+        val weddingDate: Date = weddingDateFormat.parse("2018-08-05 08:00:00")
+        val timeDifference = TimeUnit.HOURS.convert((currentDate.time - weddingDate.time), TimeUnit.MILLISECONDS)
+
+        return when {
+            timeDifference.toInt() > 0 -> "Been there, done that"
+            Math.abs(timeDifference.toInt()) in 0..11 -> "Happens today!" // within 11 hours
+            Math.abs(timeDifference.toInt()) in 12..24 -> "Less than 24 hours" // within 24 hours
+            else -> {
+                val numberOfDays = Math.abs(timeDifference).toInt()
+                when (numberOfDays) {
+                    in 25..35 -> "1 day" // A day before, because actual time is 11hours past the top hour of midnight.
+                    else -> (Math.ceil(numberOfDays/24.0)).toInt().toString() + " days"
+                }
+            }
+        }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupView()
     }
 }
