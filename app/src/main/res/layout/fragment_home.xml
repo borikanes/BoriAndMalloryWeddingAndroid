@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -27,11 +26,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_default="percent"
-        app:layout_constraintHeight_percent=".5"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintWidth_default="percent"
-        app:layout_constraintWidth_percent="1.0" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
         android:id="@+id/countdown"
@@ -44,12 +39,10 @@
         android:elevation="4dp"
         android:fontFamily="@font/merienda_one_regular"
         android:gravity="center"
-        android:text="Time to wedding day\n50 days"
+        android:text="@string/home_countdown"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/location-textview"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_default="percent"
-        app:layout_constraintHeight_percent=".15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -64,7 +57,7 @@
         android:elevation="4dp"
         android:fontFamily="@font/merienda_one_regular"
         android:gravity="center"
-        android:text="September\n22\n#maluwabori"
+        android:text="@string/home_wedding_date"
         android:textColor="@color/whiteSmoke"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/view"
@@ -82,7 +75,7 @@
         android:background="@color/teal"
         android:fontFamily="@font/merienda_one_regular"
         android:gravity="center"
-        android:text="College Park\n&amp;\nLaurel MD"
+        android:text="@string/home_location"
         android:textColor="@color/whiteSmoke"
         android:textSize="24sp"
         android:elevation="4dp"

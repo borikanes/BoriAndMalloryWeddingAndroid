@@ -1,6 +1,5 @@
 package com.mobile.boriandmallory.boriandmalloryweddingandroid.tabfragments
 
-import android.os.Build
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -9,9 +8,6 @@ import android.view.ViewGroup
 import com.mobile.boriandmallory.boriandmalloryweddingandroid.R
 import kotlinx.android.synthetic.main.fragment_home.*
 import java.text.SimpleDateFormat
-import java.time.Month
-import java.time.LocalDate
-import java.time.LocalDateTime
 import java.util.*
 import java.util.concurrent.TimeUnit
 
@@ -40,11 +36,6 @@ class HomeFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
-    fun setupView() {
-        println(message = "SHOULD PRINT")
-        countdown.text = "Time to wedding day\n" + getTimeLeftToWedding()
-    }
-
     private fun getTimeLeftToWedding(): String {
         val currentDate = Date()
         val weddingDateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
@@ -65,8 +56,14 @@ class HomeFragment : Fragment() {
         }
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        setupView()
+        setCountdown()
+    }
+
+    private fun setCountdown() {
+        // TODO: calculate number of days until the wedding here
+
+        countdown.text = getString(R.string.home_countdown, getTimeLeftToWedding())
     }
 }
