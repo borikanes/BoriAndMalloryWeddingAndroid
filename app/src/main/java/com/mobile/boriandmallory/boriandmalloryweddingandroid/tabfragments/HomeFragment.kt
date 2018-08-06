@@ -62,7 +62,6 @@ class HomeFragment : Fragment() {
     }
 
     private fun setCountdown() {
-        // TODO: calculate number of days until the wedding here
 
         countdown.text = getString(R.string.home_countdown, getTimeLeftToWedding())
     }
