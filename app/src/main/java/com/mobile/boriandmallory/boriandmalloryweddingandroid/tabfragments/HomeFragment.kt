@@ -1,10 +1,14 @@
 package com.mobile.boriandmallory.boriandmalloryweddingandroid.tabfragments
 
+import android.graphics.Color
+import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.TextView
 import com.mobile.boriandmallory.boriandmalloryweddingandroid.R
 import kotlinx.android.synthetic.main.fragment_home.*
 import java.text.SimpleDateFormat
@@ -33,13 +37,14 @@ class HomeFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
     private fun getTimeLeftToWedding(): String {
         val currentDate = Date()
         val weddingDateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
-        val weddingDate: Date = weddingDateFormat.parse("2018-08-05 08:00:00")
+        val weddingDate: Date = weddingDateFormat.parse("2018-09-22 11:00:00")
         val timeDifference = TimeUnit.HOURS.convert((currentDate.time - weddingDate.time), TimeUnit.MILLISECONDS)
 
         return when {
@@ -56,13 +61,24 @@ class HomeFragment : Fragment() {
         }
     }
 
+    private fun buttonBg() = GradientDrawable().apply {
+        shape = GradientDrawable.RECTANGLE
+        cornerRadius = 10f
+        setStroke(2, Color.parseColor("#000000"))
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        setupView()
         setCountdown()
     }
 
     private fun setCountdown() {
-
         countdown.text = getString(R.string.home_countdown, getTimeLeftToWedding())
+    }
+
+    private fun setupView() {
+        countdown.background = buttonBg()
+        dateTextview.background = buttonBg()
+        locationTextview.background = buttonBg()
     }
 }
