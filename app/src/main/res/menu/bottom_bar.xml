@@ -2,14 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/home"
-        android:title="@string/bottom_bar_home" />
+        android:title="@string/bottom_bar_home"
+        android:icon="@drawable/ic_home_black_24dp"
+         />
     <item
         android:id="@+id/schedule"
-        android:title="@string/bottom_bar_schedule" />
+        android:title="@string/bottom_bar_schedule"
+        android:icon="@drawable/ic_schedule_black_24dp" />
     <item
         android:id="@+id/seating"
-        android:title="@string/bottom_bar_seating" />
+        android:title="@string/bottom_bar_seating"
+        android:icon="@drawable/ic_seating_black_24dp" />
     <item
         android:id="@+id/food"
-        android:title="@string/bottom_bar_food" />
+        android:title="@string/bottom_bar_food"
+        android:icon="@drawable/ic_food_black_24dp"/>
 </menu>
