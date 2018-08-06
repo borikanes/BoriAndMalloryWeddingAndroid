@@ -41,6 +41,8 @@
         android:gravity="center"
         android:text="@string/home_countdown"
         android:textSize="24sp"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent=".15"
         app:layout_constraintBottom_toTopOf="@+id/location-textview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
