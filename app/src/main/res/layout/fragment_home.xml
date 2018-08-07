@@ -10,7 +10,7 @@
         android:layout_height="0dp"
         android:layout_marginBottom="13dp"
         android:cropToPadding="false"
-        android:scaleType="fitXY"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@+id/countdown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_default="percent"
