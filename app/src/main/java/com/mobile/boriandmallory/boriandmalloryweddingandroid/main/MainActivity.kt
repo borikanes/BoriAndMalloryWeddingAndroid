@@ -20,6 +20,8 @@ class MainActivity :
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        supportActionBar?.title = getString(R.string.bottom_bar_home)
+
         // listen for clicks on the bottom bar
         bottom_nav_bar.setOnNavigationItemSelectedListener(this)
 
@@ -30,6 +32,7 @@ class MainActivity :
             override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {}
             override fun onPageSelected(position: Int) {
                 setBottomBarItemSelected(position)
+                updateToolbarTitle(position)
             }
         })
     }
@@ -50,6 +53,15 @@ class MainActivity :
             MainPagerAdapter.MainPagerPosition.SCHEDULE.ordinal -> bottom_nav_bar.selectedItemId = R.id.schedule
             MainPagerAdapter.MainPagerPosition.SEATING.ordinal -> bottom_nav_bar.selectedItemId = R.id.seating
             MainPagerAdapter.MainPagerPosition.FOOD.ordinal -> bottom_nav_bar.selectedItemId = R.id.food
+        }
+    }
+
+    private fun updateToolbarTitle(position: Int) {
+        supportActionBar?.title = when (position) {
+            MainPagerAdapter.MainPagerPosition.SCHEDULE.ordinal -> getString(R.string.bottom_bar_schedule)
+            MainPagerAdapter.MainPagerPosition.SEATING.ordinal -> getString(R.string.bottom_bar_seating)
+            MainPagerAdapter.MainPagerPosition.FOOD.ordinal -> getString(R.string.bottom_bar_food)
+            else -> getString(R.string.bottom_bar_home)
         }
     }
 }
