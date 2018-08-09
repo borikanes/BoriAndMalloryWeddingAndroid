@@ -7,4 +7,18 @@
     <string name="bottom_bar_seating">Seating</string>
     <string name="bottom_bar_food">Food</string>
 
+    <!-- Food -->
+    <string name="baked_salmon">Baked Salmon</string>
+    <string name="chin_chin">Chin Chin</string>
+    <string name="efo_elegusi">Efo Elegusi</string>
+    <string name="efo_riro">Efo Riro</string>
+    <string name="fried_rice">Nigerian Fried Rice</string>
+    <string name="italian_seasoned">Italian Seasoned Chicken</string>
+    <string name="jollof_rice">Jollof Rice</string>
+    <string name="meat_pie">Meat Pie</string>
+    <string name="moin_moin">Moin Moin</string>
+    <string name="puff_puff">Puff Puff</string>
+    <string name="stewed_chicken">Stewed Chicken</string>
+    <string name="yam_porridge">Yam Porridge</string>
+
 </resources>
