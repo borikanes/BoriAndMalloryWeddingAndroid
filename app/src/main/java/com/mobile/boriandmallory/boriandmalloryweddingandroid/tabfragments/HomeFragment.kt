@@ -48,14 +48,14 @@ class HomeFragment : Fragment() {
         val timeDifference = TimeUnit.HOURS.convert((currentDate.time - weddingDate.time), TimeUnit.MILLISECONDS)
 
         return when {
-            timeDifference.toInt() > 0 -> "Been there, done that"
-            Math.abs(timeDifference.toInt()) in 0..11 -> "Happens today!" // within 11 hours
-            Math.abs(timeDifference.toInt()) in 12..24 -> "Less than 24 hours" // within 24 hours
+            timeDifference.toInt() > 0 -> getString(R.string.been_there)
+            Math.abs(timeDifference.toInt()) in 0..11 -> getString(R.string.happens_today) // within 11 hours
+            Math.abs(timeDifference.toInt()) in 12..24 -> getString(R.string.less_than_day) // within 24 hours
             else -> {
                 val numberOfDays = Math.abs(timeDifference).toInt()
                 when (numberOfDays) {
-                    in 25..35 -> "1 day" // A day before, because actual time is 11hours past the top hour of midnight.
-                    else -> (Math.ceil(numberOfDays/24.0)).toInt().toString() + " days"
+                    in 25..35 -> getString(R.string.one_day) // A day before, because actual time is 11hours past the top hour of midnight.
+                    else -> getString(R.string.days_left, (Math.ceil(numberOfDays/24.0)).toInt().toString())
                 }
             }
         }
@@ -68,7 +68,6 @@ class HomeFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        setupView()
         setCountdown()
     }
 

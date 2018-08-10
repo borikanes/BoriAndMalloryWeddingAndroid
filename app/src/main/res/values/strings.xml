@@ -12,5 +12,11 @@
     <string name="home_wedding_date">September\n22\n#maluwabori</string>
     <string name="home_location">College Park\n&amp;\nLaurel MD</string>
     <string name="bori_amp_mallory"><![CDATA[Bori & Mallory]]></string>
+    <string name="been_there">Been there, done that</string>
+    <string name="happens_today">Happens today!</string>
+    <string name="less_than_day">Less than 24 hours</string>
+    <string name="one_day">1 day</string>
+    <string name="days_left">%1$s days</string>
+
 
 </resources>
