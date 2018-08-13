@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="home_text_size">24sp</dimen>
+
+    <dimen name="margin_one_fourth">4dp</dimen>
+    <dimen name="margin_default">16dp</dimen>
+    <dimen name="margin_three_halves">24dp</dimen>
+
+    <dimen name="schedule_item_size">80dp</dimen>
+
+    <dimen name="caption_text_size">18sp</dimen>
+    <dimen name="subtitle_text_size">24sp</dimen>
 </resources>
