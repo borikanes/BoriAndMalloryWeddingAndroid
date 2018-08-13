@@ -2,6 +2,8 @@ package com.mobile.boriandmallory.boriandmalloryweddingandroid.tabfragments.sche
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v4.content.ContextCompat
+import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.view.LayoutInflater
@@ -40,14 +42,17 @@ class ScheduleFragment : Fragment() {
 
     // TODO: verify firebase is caching appropriately
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        schedule_recycler_view.layoutManager = LinearLayoutManager(context)
+
         val db = FirebaseFirestore.getInstance()
 
         db.collection("schedule")
+                .orderBy("time")
                 .get()
                 .addOnSuccessListener {
                     val schedule = it.documents.mapNotNull { doc -> doc.toObject(ScheduleEvent::class.java) }
                     val adapter = ScheduleRecyclerAdapter(schedule)
-                    schedule_recycler_view.layoutManager = LinearLayoutManager(context)
+
                     schedule_recycler_view.adapter = adapter
                 }
                 .addOnFailureListener {
