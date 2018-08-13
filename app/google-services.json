@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "121023804699",
+    "firebase_url": "https://boriandmalloryweddingandroid.firebaseio.com",
+    "project_id": "boriandmalloryweddingandroid",
+    "storage_bucket": "boriandmalloryweddingandroid.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:121023804699:android:9c7b2a8beeb74a92",
+        "android_client_info": {
+          "package_name": "com.mobile.boriandmallory.boriandmalloryweddingandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "121023804699-m3mi4cfea58lks0ssom6so8ge1jh2app.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mobile.boriandmallory.boriandmalloryweddingandroid",
+            "certificate_hash": "d2a60f6a9f4d52c672a529934bfac7daeacdfa1d"
+          }
+        },
+        {
+          "client_id": "121023804699-06jhpktcfgb2a0bu10e1ndamor4k8fam.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBdxsYAsYHrLsIqeEtrr4JwQtauG2Iodw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "121023804699-06jhpktcfgb2a0bu10e1ndamor4k8fam.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
