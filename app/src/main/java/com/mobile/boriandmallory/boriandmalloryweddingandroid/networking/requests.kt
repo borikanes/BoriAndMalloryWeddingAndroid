@@ -1,23 +1,27 @@
 package com.mobile.boriandmallory.boriandmalloryweddingandroid.networking
 
 import android.content.Context
-import com.android.volley.Request
-import com.android.volley.Response
-import com.android.volley.toolbox.StringRequest
-import com.android.volley.toolbox.Volley
+import com.mobile.boriandmallory.boriandmalloryweddingandroid.models.SeatingResponseFromAPI
+import retrofit2.Call
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.GET
+import retrofit2.http.Query
 
 class DataRequests {
+    private var seatingDataAPI: SeatingDataAPI
 
-    public fun makeRequest(url: String, context: Context) {
-        val queue = Volley.newRequestQueue(context)
+    init {
+        val retrofit = Retrofit.Builder()
+                .baseUrl("https://styf7r70gj.execute-api.us-east-1.amazonaws.com/prod")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
 
-        val stringRequest = StringRequest(Request.Method.GET, url,
-                Response.Listener<String> { response ->
-                    print(response)
-                },
-                Response.ErrorListener { print("Network error") })
-
-// Add the request to the RequestQueue.
-        queue.add(stringRequest)
+        seatingDataAPI = retrofit.create(SeatingDataAPI::class.java)
     }
+}
+
+interface  SeatingDataAPI {
+    @GET("/seating")
+    fun getData(): Call<SeatingResponseFromAPI>
 }
