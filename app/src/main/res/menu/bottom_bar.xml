@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/home"
-        android:title="@string/bottom_bar_home"
+        android:enabled="true"
         android:icon="@drawable/ic_home_black_24dp"
-         />
+        android:title="@string/bottom_bar_home"
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/schedule"
+        android:enabled="true"
+        android:icon="@drawable/ic_schedule_black_24dp"
         android:title="@string/bottom_bar_schedule"
-        android:icon="@drawable/ic_schedule_black_24dp" />
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/seating"
+        android:enabled="true"
+        android:icon="@drawable/ic_seating_black_24dp"
         android:title="@string/bottom_bar_seating"
-        android:icon="@drawable/ic_seating_black_24dp" />
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/food"
+        android:enabled="true"
+        android:icon="@drawable/ic_food_black_24dp"
         android:title="@string/bottom_bar_food"
-        android:icon="@drawable/ic_food_black_24dp"/>
+        app:showAsAction="ifRoom" />
 </menu>
