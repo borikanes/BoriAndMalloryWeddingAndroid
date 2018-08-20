@@ -6,6 +6,6 @@ import retrofit2.http.GET
 
 interface SeatingService {
 
-    @GET("/seating")
+    @GET("seating")
     fun getSeating(): Single<List<Seating>>
 }

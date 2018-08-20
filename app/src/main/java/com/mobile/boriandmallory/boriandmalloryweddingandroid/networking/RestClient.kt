@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class RestClient {
 
     companion object {
-        const val BASE_URL = "https://styf7r70gj.execute-api.us-east-1.amazonaws.com/prod"
+        private const val BASE_URL = "https://styf7r70gj.execute-api.us-east-1.amazonaws.com/prod/"
 
         fun createSeatingService(): SeatingService = createRestClient().create(SeatingService::class.java)
 

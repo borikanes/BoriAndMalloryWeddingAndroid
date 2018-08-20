@@ -10,6 +10,7 @@ class SeatingPresenter : SeatingContract.Presenter {
 
     private lateinit var view: SeatingContract.View
     private var disposables = CompositeDisposable()
+    private var seating: List<Seating>? = null
 
     private val seatingService by lazy {
         RestClient.createSeatingService()
@@ -24,16 +25,21 @@ class SeatingPresenter : SeatingContract.Presenter {
     }
 
     override fun getSeating() {
-        // TODO: handle loading
+        seating?.let {
+            view.setupSeating(it)
+            return
+        }
 
+        view.showProgress(true)
         disposables += seatingService.getSeating()
                 .observeOn(AndroidSchedulers.mainThread())
+                .doAfterTerminate { view.showProgress(false) }
                 .subscribe(this::onSeatingSuccess, this::onSeatingError)
     }
 
     private fun onSeatingSuccess(seating: List<Seating>) {
-        // TODO: update recycler view with data
-        // TODO: handle loading
+        this.seating = seating
+        view.setupSeating(seating)
     }
 
     private fun onSeatingError(t: Throwable) {

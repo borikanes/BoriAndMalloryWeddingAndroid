@@ -2,12 +2,14 @@ package com.mobile.boriandmallory.boriandmalloryweddingandroid.tabfragments.seat
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.mobile.boriandmallory.boriandmalloryweddingandroid.R
 import com.mobile.boriandmallory.boriandmalloryweddingandroid.models.Seating
 import com.mobile.boriandmallory.boriandmalloryweddingandroid.networking.RestClient
+import kotlinx.android.synthetic.main.fragment_seating.*
 
 /**
  * The fragment for showing the third tab of information.  This will show the seating chart for
@@ -39,6 +41,8 @@ class SeatingFragment : Fragment(), SeatingContract.View {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         presenter.bind(this)
         presenter.getSeating()
+
+        seating_recycler_view.layoutManager = LinearLayoutManager(context)
     }
 
     override fun onStop() {
@@ -47,10 +51,11 @@ class SeatingFragment : Fragment(), SeatingContract.View {
     }
 
     override fun setupSeating(seating: List<Seating>) {
-        // TODO: add data to recycler view
+        seating_recycler_view.adapter = SeatingAdapter(seating)
     }
 
     override fun showProgress(show: Boolean) {
-        // TODO: show or hide progress view
+        seating_progress.visibility = if (show) View.VISIBLE else View.GONE
+        seating_recycler_view.visibility = if (show) View.GONE else View.VISIBLE
     }
 }
