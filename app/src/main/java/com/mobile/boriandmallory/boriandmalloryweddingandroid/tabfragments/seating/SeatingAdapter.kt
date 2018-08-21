@@ -25,6 +25,7 @@ class SeatingAdapter(private val seating: List<Seating>) : RecyclerView.Adapter<
 
         fun bind(seat: Seating) {
             view.seating_name.text = seat.name
+            view.seating_number.text = seat.table
         }
     }
 }
