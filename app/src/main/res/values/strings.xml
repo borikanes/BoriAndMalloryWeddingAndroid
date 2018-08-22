@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">BoriAndMalloryWeddingAndroid</string>
 
-    <!-- bottom bar menu -->
+    <!-- Bottom Bar Menu -->
     <string name="bottom_bar_home">Home</string>
     <string name="bottom_bar_schedule">Schedule</string>
     <string name="bottom_bar_seating">Seating</string>
@@ -31,5 +31,9 @@
     <string name="puff_puff">Puff Puff</string>
     <string name="stewed_chicken">Stewed Chicken</string>
     <string name="yam_porridge">Yam Porridge</string>
+
+    <!-- Search -->
+    <string name="action_search">Search</string>
+    <string name="search_hint">Search&#8230;</string>
 
 </resources>
