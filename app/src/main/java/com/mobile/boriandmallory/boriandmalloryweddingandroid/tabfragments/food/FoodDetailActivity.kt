@@ -3,6 +3,7 @@ package com.mobile.boriandmallory.boriandmalloryweddingandroid.tabfragments.food
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.mobile.boriandmallory.boriandmalloryweddingandroid.R
 import com.mobile.boriandmallory.boriandmalloryweddingandroid.models.Food
 import kotlinx.android.synthetic.main.activity_food_detail.*
@@ -22,8 +23,13 @@ class FoodDetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_food_detail)
 
         val food: Food? = intent.extras.getParcelable(EXTRA_FOOD_ITEM) as? Food
-        food?.name?.let { food_detail_title.text = getString(it) }
-        food?.image?.let { food_detail_image.setImageDrawable(ContextCompat.getDrawable(this, it)) }
+        food?.title?.let { food_detail_title.text = it }
+        food?.description?.let { food_detail_description.text = it }
 
+        food?.image?.let {
+            Glide.with(this)
+                    .load(it)
+                    .into(food_detail_image)
+        }
     }
 }

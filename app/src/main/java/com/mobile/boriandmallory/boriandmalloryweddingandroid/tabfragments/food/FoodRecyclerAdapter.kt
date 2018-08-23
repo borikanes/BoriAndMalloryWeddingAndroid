@@ -35,7 +35,6 @@ class FoodRecyclerAdapter(private val foodList: List<Food>) : RecyclerView.Adapt
                     .into(view.food_image)
 
             view.food_title.text = food.title
-            view.food_detail_description.text = food.description
 
             view.setOnClickListener {
                 val intent = Intent(view.context, FoodDetailActivity::class.java)
