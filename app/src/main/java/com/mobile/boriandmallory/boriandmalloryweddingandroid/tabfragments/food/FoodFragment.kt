@@ -3,11 +3,17 @@ package com.mobile.boriandmallory.boriandmalloryweddingandroid.tabfragments.food
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.google.firebase.firestore.FirebaseFirestore
 import com.mobile.boriandmallory.boriandmalloryweddingandroid.R
+import com.mobile.boriandmallory.boriandmalloryweddingandroid.models.Food
+import com.mobile.boriandmallory.boriandmalloryweddingandroid.models.ScheduleEvent
+import com.mobile.boriandmallory.boriandmalloryweddingandroid.tabfragments.schedule.ScheduleRecyclerAdapter
 import kotlinx.android.synthetic.main.fragment_food.*
+import kotlinx.android.synthetic.main.fragment_schedule.*
 
 /**
  * The fragment for displaying the fourth tab of information.  This will show information
@@ -35,11 +41,21 @@ class FoodFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        initRecyclerView()
-    }
-
-    private fun initRecyclerView() {
         food_recycler_view.layoutManager = LinearLayoutManager(context)
-        food_recycler_view.adapter = FoodRecyclerAdapter(FoodFactory.getFood())
+
+        val db = FirebaseFirestore.getInstance()
+
+        db.collection("food")
+                .orderBy("title")
+                .get()
+                .addOnSuccessListener {
+                    val food = it.documents.mapNotNull { doc -> doc.toObject(Food::class.java) }
+                    val adapter = FoodRecyclerAdapter(food)
+                    schedule_recycler_view.adapter = adapter
+                }
+                .addOnFailureListener {
+                    // TODO: handle this error appropriately
+                    Log.e("FIREBASE_ERROR", "WE HAVE AN ERROR")
+                }
     }
 }

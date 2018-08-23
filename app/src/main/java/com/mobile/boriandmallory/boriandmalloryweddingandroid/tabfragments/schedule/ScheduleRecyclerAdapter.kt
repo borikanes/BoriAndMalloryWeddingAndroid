@@ -26,7 +26,7 @@ class ScheduleRecyclerAdapter(private val schedule: List<ScheduleEvent>) : Recyc
 
     inner class ScheduleViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
 
-        val formatter = SimpleDateFormat("h:mm a", Locale.US)
+        private val formatter = SimpleDateFormat("h:mm a", Locale.US)
 
         fun bind(event: ScheduleEvent) {
             view.schedule_title.text = event.title
@@ -34,7 +34,7 @@ class ScheduleRecyclerAdapter(private val schedule: List<ScheduleEvent>) : Recyc
 
             Glide.with(view.context)
                     .load(event.image1)
-                    .into(view.schedule_image1);
+                    .into(view.schedule_image1)
         }
     }
 }

@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import com.google.firebase.firestore.FirebaseFirestore
 import com.mobile.boriandmallory.boriandmalloryweddingandroid.R
 import com.mobile.boriandmallory.boriandmalloryweddingandroid.models.ScheduleEvent
 import kotlinx.android.synthetic.main.fragment_schedule.*

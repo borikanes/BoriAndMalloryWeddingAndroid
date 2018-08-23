@@ -6,10 +6,13 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
 import com.mobile.boriandmallory.boriandmalloryweddingandroid.R
 import com.mobile.boriandmallory.boriandmalloryweddingandroid.models.Food
 import com.mobile.boriandmallory.boriandmalloryweddingandroid.tabfragments.food.FoodDetailActivity.Companion.EXTRA_FOOD_ITEM
+import kotlinx.android.synthetic.main.activity_food_detail.view.*
 import kotlinx.android.synthetic.main.item_food.view.*
+import kotlinx.android.synthetic.main.item_schedule.view.*
 
 class FoodRecyclerAdapter(private val foodList: List<Food>) : RecyclerView.Adapter<FoodRecyclerAdapter.FoodViewHolder>() {
 
@@ -27,8 +30,12 @@ class FoodRecyclerAdapter(private val foodList: List<Food>) : RecyclerView.Adapt
     inner class FoodViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
 
         fun bind(food: Food) {
-            view.food_image.setImageDrawable(ContextCompat.getDrawable(view.context, food.image))
-            view.food_title.text = view.context.getString(food.name)
+            Glide.with(view.context)
+                    .load(food.image)
+                    .into(view.food_image)
+
+            view.food_title.text = food.title
+            view.food_detail_description.text = food.description
 
             view.setOnClickListener {
                 val intent = Intent(view.context, FoodDetailActivity::class.java)
