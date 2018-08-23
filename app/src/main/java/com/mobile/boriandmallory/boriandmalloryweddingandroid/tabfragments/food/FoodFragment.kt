@@ -51,7 +51,7 @@ class FoodFragment : Fragment() {
                 .addOnSuccessListener {
                     val food = it.documents.mapNotNull { doc -> doc.toObject(Food::class.java) }
                     val adapter = FoodRecyclerAdapter(food)
-                    schedule_recycler_view.adapter = adapter
+                    food_recycler_view.adapter = adapter
                 }
                 .addOnFailureListener {
                     // TODO: handle this error appropriately
