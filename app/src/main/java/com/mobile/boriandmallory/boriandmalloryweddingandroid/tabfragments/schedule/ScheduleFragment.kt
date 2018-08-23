@@ -10,7 +10,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
-import com.google.firebase.firestore.FirebaseFirestore
 import com.mobile.boriandmallory.boriandmalloryweddingandroid.R
 import com.mobile.boriandmallory.boriandmalloryweddingandroid.models.ScheduleEvent
 import kotlinx.android.synthetic.main.fragment_schedule.*
@@ -40,7 +39,6 @@ class ScheduleFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_schedule, container, false)
     }
 
-    // TODO: verify firebase is caching appropriately
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         schedule_recycler_view.layoutManager = LinearLayoutManager(context)
 
