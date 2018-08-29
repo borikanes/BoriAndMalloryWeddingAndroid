@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/margin_default"
-    android:background="@color/burgundy_20_pct">
+    android:background="@color/colorPrimaryLight">
 
     <ImageView
         android:id="@+id/schedule_image1"

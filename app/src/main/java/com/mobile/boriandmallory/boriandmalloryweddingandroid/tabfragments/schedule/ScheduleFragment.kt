@@ -2,14 +2,11 @@ package com.mobile.boriandmallory.boriandmalloryweddingandroid.tabfragments.sche
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v4.content.ContextCompat
-import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import com.google.firebase.firestore.FirebaseFirestore
 import com.mobile.boriandmallory.boriandmalloryweddingandroid.R
 import com.mobile.boriandmallory.boriandmalloryweddingandroid.models.ScheduleEvent
@@ -41,7 +38,10 @@ class ScheduleFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        // TODO: add loading indicator
+
         schedule_recycler_view.layoutManager = LinearLayoutManager(context)
+        schedule_recycler_view.adapter = ScheduleRecyclerAdapter(listOf())
 
         val db = FirebaseFirestore.getInstance()
 

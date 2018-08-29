@@ -10,10 +10,7 @@ import android.view.ViewGroup
 import com.google.firebase.firestore.FirebaseFirestore
 import com.mobile.boriandmallory.boriandmalloryweddingandroid.R
 import com.mobile.boriandmallory.boriandmalloryweddingandroid.models.Food
-import com.mobile.boriandmallory.boriandmalloryweddingandroid.models.ScheduleEvent
-import com.mobile.boriandmallory.boriandmalloryweddingandroid.tabfragments.schedule.ScheduleRecyclerAdapter
 import kotlinx.android.synthetic.main.fragment_food.*
-import kotlinx.android.synthetic.main.fragment_schedule.*
 
 /**
  * The fragment for displaying the fourth tab of information.  This will show information
@@ -41,7 +38,10 @@ class FoodFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        // TODO: add loading indicator
+
         food_recycler_view.layoutManager = LinearLayoutManager(context)
+        food_recycler_view.adapter = FoodRecyclerAdapter(listOf())
 
         val db = FirebaseFirestore.getInstance()
 

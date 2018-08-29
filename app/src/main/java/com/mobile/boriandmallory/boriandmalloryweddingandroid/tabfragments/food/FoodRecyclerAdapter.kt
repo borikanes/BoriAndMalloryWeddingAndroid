@@ -1,18 +1,17 @@
 package com.mobile.boriandmallory.boriandmalloryweddingandroid.tabfragments.food
 
 import android.content.Intent
-import android.support.v4.content.ContextCompat
+import android.support.v4.widget.CircularProgressDrawable
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
+import com.mobile.boriandmallory.boriandmalloryweddingandroid.GlideApp
 import com.mobile.boriandmallory.boriandmalloryweddingandroid.R
 import com.mobile.boriandmallory.boriandmalloryweddingandroid.models.Food
 import com.mobile.boriandmallory.boriandmalloryweddingandroid.tabfragments.food.FoodDetailActivity.Companion.EXTRA_FOOD_ITEM
-import kotlinx.android.synthetic.main.activity_food_detail.view.*
 import kotlinx.android.synthetic.main.item_food.view.*
-import kotlinx.android.synthetic.main.item_schedule.view.*
 
 class FoodRecyclerAdapter(private val foodList: List<Food>) : RecyclerView.Adapter<FoodRecyclerAdapter.FoodViewHolder>() {
 
@@ -30,7 +29,7 @@ class FoodRecyclerAdapter(private val foodList: List<Food>) : RecyclerView.Adapt
     inner class FoodViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
 
         fun bind(food: Food) {
-            Glide.with(view.context)
+            GlideApp.with(view.context)
                     .load(food.image)
                     .into(view.food_image)
 
