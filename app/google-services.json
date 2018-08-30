@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "121023804699",
-    "firebase_url": "https://boriandmalloryweddingandroid.firebaseio.com",
-    "project_id": "boriandmalloryweddingandroid",
-    "storage_bucket": "boriandmalloryweddingandroid.appspot.com"
+    "project_number": "607167950164",
+    "firebase_url": "https://boriandmalloryios.firebaseio.com",
+    "project_id": "boriandmalloryios",
+    "storage_bucket": "boriandmalloryios.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:121023804699:android:9c7b2a8beeb74a92",
+        "mobilesdk_app_id": "1:607167950164:android:9c7b2a8beeb74a92",
         "android_client_info": {
           "package_name": "com.mobile.boriandmallory.boriandmalloryweddingandroid"
         }
       },
       "oauth_client": [
         {
-          "client_id": "121023804699-m3mi4cfea58lks0ssom6so8ge1jh2app.apps.googleusercontent.com",
+          "client_id": "607167950164-51tbckk1n5dvqmht86s8ai9soeikcmd6.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.mobile.boriandmallory.boriandmalloryweddingandroid",
@@ -23,13 +23,13 @@
           }
         },
         {
-          "client_id": "121023804699-06jhpktcfgb2a0bu10e1ndamor4k8fam.apps.googleusercontent.com",
+          "client_id": "607167950164-i18hmoee0ds8dfb0njfkvt9gr4635jji.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBBdxsYAsYHrLsIqeEtrr4JwQtauG2Iodw"
+          "current_key": "AIzaSyDsKhqxv8DpZi9e-6fK6hDEy6PxnSa_RlM"
         }
       ],
       "services": {
@@ -40,8 +40,15 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "121023804699-06jhpktcfgb2a0bu10e1ndamor4k8fam.apps.googleusercontent.com",
+              "client_id": "607167950164-i18hmoee0ds8dfb0njfkvt9gr4635jji.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "607167950164-h6v6epgvj3203igeesnh2nmtgl1rtush.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "me.borikanes.BoriAndMalloryWedding"
+              }
             }
           ]
         },

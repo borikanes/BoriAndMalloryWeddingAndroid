@@ -5,9 +5,11 @@ import android.os.Parcelable
 import android.support.annotation.DrawableRes
 import android.support.annotation.StringRes
 
-data class Food(@DrawableRes val image: Int,
-                @StringRes val name: Int,
-                @StringRes val description: Int) : Parcelable {
+data class Food(val description: String? = null,
+                val glutenFree: Boolean? = null,
+                val image: String? = null,
+                val title: String? = null,
+                val vegetarian: Boolean? = null) : Parcelable {
 
     companion object CREATOR : Parcelable.Creator<Food> {
         override fun createFromParcel(parcel: Parcel): Food {
@@ -20,14 +22,18 @@ data class Food(@DrawableRes val image: Int,
     }
 
     constructor(parcel: Parcel) : this(
-            image = parcel.readInt(),
-            name = parcel.readInt(),
-            description = parcel.readInt())
+            description = parcel.readValue(String::class.java.classLoader) as? String?,
+            glutenFree = parcel.readValue(Boolean::class.java.classLoader) as? Boolean?,
+            image = parcel.readValue(String::class.java.classLoader) as? String?,
+            title = parcel.readValue(String::class.java.classLoader) as? String?,
+            vegetarian = parcel.readValue(Boolean::class.java.classLoader) as? Boolean?)
 
     override fun writeToParcel(parcel: Parcel?, flags: Int) {
-        parcel?.writeInt(image)
-        parcel?.writeInt(name)
-        parcel?.writeInt(description)
+        parcel?.writeValue(description)
+        parcel?.writeValue(glutenFree)
+        parcel?.writeValue(image)
+        parcel?.writeValue(title)
+        parcel?.writeValue(vegetarian)
     }
 
     override fun describeContents(): Int = 0
