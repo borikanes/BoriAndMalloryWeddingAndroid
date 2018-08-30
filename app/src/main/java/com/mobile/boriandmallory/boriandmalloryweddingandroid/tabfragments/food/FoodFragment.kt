@@ -38,7 +38,7 @@ class FoodFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        // TODO: add loading indicator
+        showProgress(true)
 
         food_recycler_view.layoutManager = LinearLayoutManager(context)
         food_recycler_view.adapter = FoodRecyclerAdapter(listOf())
@@ -52,10 +52,16 @@ class FoodFragment : Fragment() {
                     val food = it.documents.mapNotNull { doc -> doc.toObject(Food::class.java) }
                     val adapter = FoodRecyclerAdapter(food)
                     food_recycler_view.adapter = adapter
+                    showProgress(false)
                 }
                 .addOnFailureListener {
                     // TODO: handle this error appropriately
-                    Log.e("FIREBASE_ERROR", "WE HAVE AN ERROR")
+                    showProgress(false)
                 }
+    }
+
+    private fun showProgress(show: Boolean) {
+        food_progress.visibility = if (show) View.VISIBLE else View.GONE
+        food_recycler_view.visibility = if (!show) View.VISIBLE else View.GONE
     }
 }
