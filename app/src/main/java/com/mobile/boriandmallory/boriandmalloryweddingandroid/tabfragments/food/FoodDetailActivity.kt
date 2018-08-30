@@ -7,7 +7,6 @@ import com.mobile.boriandmallory.boriandmalloryweddingandroid.R
 import com.mobile.boriandmallory.boriandmalloryweddingandroid.models.Food
 import kotlinx.android.synthetic.main.activity_food_detail.*
 
-// TODO: add back button to toolbar
 // TODO: add animation of food image from list to detail
 
 class FoodDetailActivity : AppCompatActivity() {
@@ -22,6 +21,8 @@ class FoodDetailActivity : AppCompatActivity() {
 
         val food: Food? = intent.extras.getParcelable(EXTRA_FOOD_ITEM) as? Food
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         if (food?.title != null) {
             supportActionBar?.title = food.title
         } else {
@@ -35,5 +36,10 @@ class FoodDetailActivity : AppCompatActivity() {
                     .load(it)
                     .into(food_detail_image)
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 }
