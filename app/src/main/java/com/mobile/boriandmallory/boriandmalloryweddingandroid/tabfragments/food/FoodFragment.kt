@@ -1,9 +1,11 @@
 package com.mobile.boriandmallory.boriandmalloryweddingandroid.tabfragments.food
 
+import android.content.Intent
 import android.os.Bundle
+import android.support.v4.app.ActivityOptionsCompat
 import android.support.v4.app.Fragment
+import android.support.v4.view.ViewCompat
 import android.support.v7.widget.LinearLayoutManager
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +18,7 @@ import kotlinx.android.synthetic.main.fragment_food.*
  * The fragment for displaying the fourth tab of information.  This will show information
  * about the different types of food offered at the wedding.
  */
-class FoodFragment : Fragment() {
+class FoodFragment : Fragment(), FoodClickListener {
 
     companion object {
 
@@ -41,7 +43,7 @@ class FoodFragment : Fragment() {
         showProgress(true)
 
         food_recycler_view.layoutManager = LinearLayoutManager(context)
-        food_recycler_view.adapter = FoodRecyclerAdapter(listOf())
+        food_recycler_view.adapter = FoodRecyclerAdapter(listOf(), this)
 
         val db = FirebaseFirestore.getInstance()
 
@@ -50,7 +52,7 @@ class FoodFragment : Fragment() {
                 .get()
                 .addOnSuccessListener {
                     val food = it.documents.mapNotNull { doc -> doc.toObject(Food::class.java) }
-                    val adapter = FoodRecyclerAdapter(food)
+                    val adapter = FoodRecyclerAdapter(food, this)
                     food_recycler_view.adapter = adapter
                     showProgress(false)
                 }
@@ -63,5 +65,21 @@ class FoodFragment : Fragment() {
     private fun showProgress(show: Boolean) {
         food_progress.visibility = if (show) View.VISIBLE else View.GONE
         food_recycler_view.visibility = if (!show) View.VISIBLE else View.GONE
+    }
+
+    override fun onItemClicked(food: Food, foodImageView: View) {
+        val intent = Intent(context, FoodDetailActivity::class.java)
+        intent.putExtra(FoodDetailActivity.EXTRA_FOOD_ITEM, food)
+        intent.putExtra(FoodDetailActivity.EXTRA_FOOD_IMAGE_TRANSITION_NAME, ViewCompat.getTransitionName(foodImageView))
+
+        val options = activity?.let {
+            ActivityOptionsCompat.makeSceneTransitionAnimation(
+                    it,
+                    foodImageView,
+                    ViewCompat.getTransitionName(foodImageView) ?: ""
+            )
+        }
+
+        startActivity(intent, options?.toBundle())
     }
 }

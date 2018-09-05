@@ -5,6 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:title="Bori and Mallory" />
+
     <ImageView
         android:id="@+id/food_detail_image"
         android:layout_width="0dp"
@@ -12,7 +25,7 @@
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:srcCompat="@drawable/fried_rice" />
 
     <TextView
@@ -27,5 +40,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/food_detail_image"
         tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis nisi at metus vulputate, in scelerisque sapien suscipit. Mauris ac sollicitudin justo. Aliquam condimentum libero risus, at ultricies eros semper vitae. Etiam vulputate, est vitae tincidunt pretium, nunc mi mattis enim, et ultrices nisi ex sed sapien." />
-    
+
 </android.support.constraint.ConstraintLayout>
