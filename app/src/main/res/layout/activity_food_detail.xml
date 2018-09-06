@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:title="Bori and Mallory" />
 
     <ImageView
         android:id="@+id/food_detail_image"
@@ -13,21 +25,8 @@
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:srcCompat="@drawable/fried_rice" />
-
-    <TextView
-        android:id="@+id/food_detail_title"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/food_detail_image"
-        tools:text="Fried Rice" />
 
     <TextView
         android:id="@+id/food_detail_description"
@@ -36,10 +35,10 @@
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis nisi at metus vulputate, in scelerisque sapien suscipit. Mauris ac sollicitudin justo. Aliquam condimentum libero risus, at ultricies eros semper vitae. Etiam vulputate, est vitae tincidunt pretium, nunc mi mattis enim, et ultrices nisi ex sed sapien."
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/food_detail_title"
+        app:layout_constraintTop_toBottomOf="@+id/food_detail_image"
         tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis nisi at metus vulputate, in scelerisque sapien suscipit. Mauris ac sollicitudin justo. Aliquam condimentum libero risus, at ultricies eros semper vitae. Etiam vulputate, est vitae tincidunt pretium, nunc mi mattis enim, et ultrices nisi ex sed sapien." />
+
 </android.support.constraint.ConstraintLayout>

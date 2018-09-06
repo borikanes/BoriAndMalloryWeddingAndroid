@@ -20,6 +20,7 @@ class MainActivity :
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        setSupportActionBar(toolbar)
         supportActionBar?.title = getString(R.string.bottom_bar_home)
 
         // listen for clicks on the bottom bar

@@ -27,7 +27,8 @@
         <activity
             android:name=".main.MainActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Animation">x
 
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
@@ -40,6 +41,7 @@
         </activity>
         <activity
             android:name=".tabfragments.food.FoodDetailActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Animation" />
     </application>
 </manifest>
