@@ -1,5 +1,6 @@
 package com.mobile.boriandmallory.boriandmalloryweddingandroid.tabfragments.food
 
+import android.os.Build
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.bumptech.glide.Glide
@@ -24,6 +25,14 @@ class FoodDetailActivity : AppCompatActivity() {
         val food: Food? = intent.extras.getParcelable(EXTRA_FOOD_ITEM) as? Food
         food?.title?.let { food_detail_title.text = it }
         food?.description?.let { food_detail_description.text = it }
+
+        food?.vegetarian?.let {
+            food_detail_vegetarian_image.setImageResource(if (it) R.drawable.ic_check_green else R.drawable.ic_cancel_red)
+        } ?: food_detail_vegetarian_image.setImageResource(R.drawable.ic_cancel_red)
+
+        food?.glutenFree?.let {
+            food_detail_gluten_free_image.setImageResource(if (it) R.drawable.ic_check_green else R.drawable.ic_cancel_red)
+        } ?: food_detail_gluten_free_image.setImageResource(R.drawable.ic_cancel_red)
 
         food?.image?.let {
             Glide.with(this)
