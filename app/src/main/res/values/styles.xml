@@ -6,4 +6,12 @@
         <item name="colorPrimaryDark">@color/colorPrimary</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:fontFamily">@font/merienda_one_regular</item>
+    </style>
+
+    <style name="BottomNavigationTheme" parent="Widget.Design.BottomNavigationView">
+        <item name="android:fontFamily">@font/merienda_one_regular</item>
+    </style>
 </resources>
