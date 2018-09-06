@@ -25,7 +25,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 
 
         val notificationBuilder = NotificationCompat.Builder(this, "default")
-                .setContentTitle("Hello from Bori and Mallory!")
+                .setContentTitle(message?.notification?.title)
                 .setContentText(message?.notification?.body)
                 .setSmallIcon(R.drawable.couple_image)
                 .setAutoCancel(true)
