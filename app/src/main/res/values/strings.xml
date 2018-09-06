@@ -5,7 +5,7 @@
     <string name="bottom_bar_home">Home</string>
     <string name="bottom_bar_schedule">Schedule</string>
     <string name="bottom_bar_seating">Seating</string>
-    <string name="bottom_bar_food">Menu</string>
+    <string name="bottom_bar_food">Food</string>
 
     <!-- Home Fragment -->
     <string name="home_countdown">Time to wedding day\n%1$s</string>
