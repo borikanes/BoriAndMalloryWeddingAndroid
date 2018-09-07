@@ -15,7 +15,7 @@
         app:layout_constraintBottom_toBottomOf="@id/text_layout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/text_layout"
-        tools:src="@drawable/chin_chin" />
+        tools:src="@drawable/fried_rice" />
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/text_layout"
