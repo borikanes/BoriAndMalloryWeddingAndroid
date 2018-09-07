@@ -9,8 +9,9 @@
 
     <!-- Home Fragment -->
     <string name="home_countdown">Time to wedding day\n%1$s</string>
-    <string name="home_wedding_date">September\n22\n#maluwabori</string>
-    <string name="home_location">College Park\n&amp;\nLaurel MD</string>
+    <string name="home_wedding_date">September 22, 2019</string>
+    <string name="home_wedding_hashtag">#maluwabori</string>
+    <string name="home_location">College Park &amp; Laurel MD</string>
     <string name="bori_amp_mallory"><![CDATA[Bori & Mallory]]></string>
     <string name="been_there">Been there, done that</string>
     <string name="happens_today">Happens today!</string>
