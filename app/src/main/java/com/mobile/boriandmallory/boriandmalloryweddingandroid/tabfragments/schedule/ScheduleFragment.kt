@@ -38,7 +38,7 @@ class ScheduleFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        // TODO: add loading indicator
+        showProgress(true)
 
         schedule_recycler_view.layoutManager = LinearLayoutManager(context)
         schedule_recycler_view.adapter = ScheduleRecyclerAdapter(listOf())
@@ -51,12 +51,17 @@ class ScheduleFragment : Fragment() {
                 .addOnSuccessListener {
                     val schedule = it.documents.mapNotNull { doc -> doc.toObject(ScheduleEvent::class.java) }
                     val adapter = ScheduleRecyclerAdapter(schedule)
-
                     schedule_recycler_view.adapter = adapter
+                    showProgress(false)
                 }
                 .addOnFailureListener {
                     // TODO: handle this error appropriately
-                    Log.e("FIREBASE_ERROR", "WE HAVE AN ERROR")
+                    showProgress(false)
                 }
+    }
+
+    private fun showProgress(show: Boolean) {
+        schedule_progress.visibility = if (show) View.VISIBLE else View.GONE
+        schedule_recycler_view.visibility = if (!show) View.VISIBLE else View.GONE
     }
 }
