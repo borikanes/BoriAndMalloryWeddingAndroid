@@ -41,4 +41,44 @@
         app:layout_constraintTop_toBottomOf="@+id/food_detail_image"
         tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis nisi at metus vulputate, in scelerisque sapien suscipit. Mauris ac sollicitudin justo. Aliquam condimentum libero risus, at ultricies eros semper vitae. Etiam vulputate, est vitae tincidunt pretium, nunc mi mattis enim, et ultrices nisi ex sed sapien." />
 
+    <TextView
+        android:id="@+id/food_detail_vegetarian_label"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:gravity="center_vertical"
+        android:text="@string/food_detail_vegetarian"
+        app:layout_constraintBottom_toBottomOf="@+id/food_detail_vegetarian_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/food_detail_vegetarian_image" />
+
+    <TextView
+        android:id="@+id/food_detail_gluten_free_label"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:gravity="center_vertical"
+        android:text="@string/food_detail_gluten_free"
+        app:layout_constraintBottom_toBottomOf="@+id/food_detail_gluten_free_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/food_detail_gluten_free_image" />
+
+    <ImageView
+        android:id="@+id/food_detail_vegetarian_image"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toEndOf="@+id/food_detail_vegetarian_label"
+        app:layout_constraintTop_toBottomOf="@+id/food_detail_description"
+        app:srcCompat="@drawable/ic_check_green" />
+
+    <ImageView
+        android:id="@+id/food_detail_gluten_free_image"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/food_detail_vegetarian_image"
+        app:layout_constraintTop_toBottomOf="@+id/food_detail_vegetarian_image"
+        app:srcCompat="@drawable/ic_cancel_red" />
 </android.support.constraint.ConstraintLayout>

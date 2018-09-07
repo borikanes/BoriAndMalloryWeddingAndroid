@@ -18,8 +18,13 @@
     <string name="one_day">1 day</string>
     <string name="days_left">%1$s days</string>
 
-    <!-- Search -->
+    <!-- Seating Fragment Search -->
     <string name="action_search">Search</string>
     <string name="search_hint">Search&#8230;</string>
+
+    <!-- Food Detail -->
+
+    <string name="food_detail_vegetarian">Vegetarian</string>
+    <string name="food_detail_gluten_free">Gluten-Free</string>
 
 </resources>
